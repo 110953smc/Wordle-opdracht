@@ -1,10 +1,16 @@
 print("Welkom bij wordle!")
 
-input("druk op start")
+# invoer = input("druk op start")
+
+# if invoer == "start":
+#   print("yay")
+# else:
+#   print("meh")
 
 woorden = ["aap","noot","mies"]
 
 #hoe doe ik random in python
+
 gekozenwoord = woorden[1]
 
 woord = input("schrijf een woord: \n")
