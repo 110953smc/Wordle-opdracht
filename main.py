@@ -28,7 +28,7 @@ def raad_systeem(correct):
   
 print_menu()
 
-woordenlijst = ["agent","atoom","bloed","traan"] # todo lijst uit txt halen
-woord = woordenlijst[0] # todo: random woord
+woordenlijst = ("words.txt")
+woord = woordenlijst
 
 raad_systeem(woord)
