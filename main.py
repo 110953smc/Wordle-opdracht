@@ -17,10 +17,8 @@ def raad_systeem(correct):
     raad = input(Fore.WHITE + "kies een woord: \n")
 
     if len(raad) != 5:
-        raad = str(
-            input(
-                "Zorg ervoor dat het woord 5 letters is. \n- kies een woord: ")
-        )
+      print("Zorg ervoor dat het woord 5 letters is.")
+      raad_systeem(correct)
 
     if raad == correct:
         print("Yay gewonnen!")
