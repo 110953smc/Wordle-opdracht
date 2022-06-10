@@ -21,8 +21,9 @@ pogingen = 6
 # dit doen we bij elke beurt
 def beurt(correct):
   global pogingen
-  print(f"je hebt {pogingen} pogingen over")
+  print(f"{Fore.WHITE} Je hebt nog {pogingen} pogingen")
   raad = input(Fore.WHITE + "kies een woord: \n")
+  raad = raad.upper()
   if len(raad) != 5:
     print("Zorg ervoor dat het woord 5 letters is.")    
     beurt(correct)
@@ -30,16 +31,29 @@ def beurt(correct):
   
   if raad == correct:
       print("Yay gewonnen!")
-
-  for letter in range(len(raad)):
-      if raad[letter] == correct[letter]:
-          print(Fore.GREEN, raad[letter])
-      elif raad[letter] in correct:
-          print(Fore.YELLOW, raad[letter])
+  
+  for idx in range(len(raad)):
+      if raad[idx] == correct[idx]:
+          print(Fore.GREEN, raad[idx])
+      elif raad[idx] in correct:
+          print(Fore.YELLOW, raad[idx]) 
       else:
-          print(Fore.WHITE, raad[letter])
+          print(Fore.WHITE, raad[idx])
   
   pogingen -= 1
+  if pogingen == 0:
+    print("Je bent af!")
+    a = input("Wil je nog een keer spelen?")
+    a = a.lower()
+
+    if a == "ja":
+      pogingen = 6
+      woordenlijst = ["KAMER","LEEUW","PASEN","POLEN"]
+      woord = random.choice(woordenlijst)
+      beurt(woord)
+    else:
+      print("Ok. Dan niet.")  
+  
   beurt(correct)
     
      
@@ -47,6 +61,7 @@ def beurt(correct):
 print_menu()
 
 
-woordenlijst = ("words.txt")
-woord = woordenlijst
+woordenlijst = ["KAMER","LEEUW","PASEN","POLEN"]
+woord = random.choice(woordenlijst)
+#print(f"het woord is {woord}")
 beurt(woord)
