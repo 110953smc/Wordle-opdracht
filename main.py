@@ -2,6 +2,11 @@ import random
 from colorama import Fore
 
 
+    # if pogingen <= 0:
+    #   print("Je hebt verloren")
+    #   print('Het woord was: ' + woord)
+
+
 def print_menu():
     print("Welkom bij wordle!")
     print(
@@ -12,31 +17,36 @@ def print_menu():
         "\n-Als een letter helemaal niet in het woord voorkomt, blijft hij wit.\n-Je hebt zes kansen. "
     )
 
+pogingen = 6
+# dit doen we bij elke beurt
+def beurt(correct):
+  global pogingen
+  print(f"je hebt {pogingen} pogingen over")
+  raad = input(Fore.WHITE + "kies een woord: \n")
+  if len(raad) != 5:
+    print("Zorg ervoor dat het woord 5 letters is.")    
+    beurt(correct)
 
-def raad_systeem(correct):
-    raad = input(Fore.WHITE + "kies een woord: \n")
+  
+  if raad == correct:
+      print("Yay gewonnen!")
 
-    if len(raad) != 5:
-      print("Zorg ervoor dat het woord 5 letters is.")
-      raad_systeem(correct)
-
-    if raad == correct:
-        print("Yay gewonnen!")
-
-    for letter in range(len(raad)):
-        if raad[letter] == correct[letter]:
-            print(Fore.GREEN, raad[letter])
-        elif raad[letter] in correct:
-            print(Fore.YELLOW, raad[letter])
-        else:
-            print(Fore.WHITE, raad[letter])
-
-    raad_systeem(correct)
-
+  for letter in range(len(raad)):
+      if raad[letter] == correct[letter]:
+          print(Fore.GREEN, raad[letter])
+      elif raad[letter] in correct:
+          print(Fore.YELLOW, raad[letter])
+      else:
+          print(Fore.WHITE, raad[letter])
+  
+  pogingen -= 1
+  beurt(correct)
+    
+     
 
 print_menu()
 
+
 woordenlijst = ("words.txt")
 woord = woordenlijst
-
-raad_systeem(woord)
+beurt(woord)
