@@ -36,7 +36,7 @@ def beurt(correct):
         a = a.lower()
         if a == "ja":
             pogingen = 6
-            woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN"]
+            woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN", "LEPEL", "BAKJE", "DEKEN", "PIANO", "PLANT", "REGEN", "SPORT", "BLAUW", "VOGEL", "APPEL", "LAKEN", "BOVEN", "KWAST", "NAAST", "KRAMP", "BINGO", "ONDER", "TAFEL", "ZAGEN", "SLANG", "KOGEL"]
             woord = random.choice(woordenlijst)
             beurt(woord)
         else:
@@ -60,7 +60,7 @@ def beurt(correct):
 
         if a == "ja":
             pogingen = 6
-            woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN"]
+            woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN", "LEPEL", "BAKJE", "DEKEN", "PIANO", "PLANT", "REGEN", "SPORT", "BLAUW", "VOGEL", "APPEL", "LAKEN", "BOVEN", "KWAST", "NAAST", "KRAMP", "BINGO", "ONDER", "TAFEL", "ZAGEN", "SLANG", "KOGEL"]
             woord = random.choice(woordenlijst)
             beurt(woord)
         else:
@@ -71,7 +71,7 @@ def beurt(correct):
 
 print_menu()
 
-woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN"]
+woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN", "LEPEL", "BAKJE", "DEKEN",   "PIANO", "PLANT", "REGEN", "SPORT", "BLAUW", "VOGEL", "APPEL", "LAKEN", "BOVEN", "KWAST", "NAAST", "KRAMP", "BINGO", "ONDER", "TAFEL", "ZAGEN", "SLANG", "KOGEL"]
 woord = random.choice(woordenlijst)
 
 beurt(woord)
