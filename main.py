@@ -4,21 +4,19 @@ from colorama import Fore
 # if pogingen <= 0:
 #   print("Je hebt verloren")
 #   print('Het woord was: ' + woord)
+pogingen = 6
 
 
 #instructies
 def print_menu():
     print("Welkom bij wordle!")
     print(
-        "De computer zal willekeurig een nederlands woord       kiezen van vijf letters. Hoe het werkt: \n\n-Typ een woord van vijf letters\n-Als een letter in het woord staat maar niet op de juiste plaats, wordt het "
+        "De computer zal willekeurig een nederlands woord kiezen van vijf letters. Hoe het werkt: \n\n-Typ een woord van vijf letters\n-Als een letter in het woord staat maar niet op de juiste plaats, wordt het "
         + Fore.YELLOW + "GEEL" + Fore.WHITE +
         "\n-Als een letter in het woord voorkomt en op de juiste plaats staat, wordt deze "
         + Fore.GREEN + "GROEN" + Fore.WHITE +
         "\n-Als een letter helemaal niet in het woord voorkomt, blijft hij wit.\n-Je hebt zes kansen. "
     )
-
-
-pogingen = 6
 
 
 #dit doen we bij elke beurt
@@ -56,7 +54,7 @@ def beurt(correct):
     pogingen -= 1
     if pogingen == 0:
         print("Je bent af!")
-        print("het woord was "+ woord)
+        print("het woord was " + woord)
         a = input("Wil je nog een keer spelen?")
         a = a.lower()
 
@@ -75,5 +73,5 @@ print_menu()
 
 woordenlijst = ["KAMER", "LEEUW", "PASEN", "POLEN"]
 woord = random.choice(woordenlijst)
-print(f"het woord is {woord}")
+
 beurt(woord)
