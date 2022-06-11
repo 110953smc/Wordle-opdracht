@@ -32,7 +32,7 @@ def beurt(correct):
 
     if raad == correct:
         print("Yay gewonnen! Het woord was inderdaad " + woord)
-        a = input("Wil je nog een keer spelen?")
+        a = input(Fore.WHITE + "Wil je nog een keer spelen?")
         a = a.lower()
         if a == "ja":
             pogingen = 6
@@ -53,7 +53,7 @@ def beurt(correct):
 
     pogingen -= 1
     if pogingen == 0:
-        print("Je bent af!")
+        print(Fore.WHITE + "Je bent af!")
         print("het woord was " + woord)
         a = input("Wil je nog een keer spelen?")
         a = a.lower()
